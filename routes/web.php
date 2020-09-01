@@ -59,6 +59,11 @@ Route::get('/laporan/buku', 'LaporanController@buku');
 Route::get('/laporan/buku/pdf', 'LaporanController@bukuPdf');
 Route::get('/laporan/buku/excel', 'LaporanController@bukuExcel');
 
+Route::get('/tiket', 'TiketController@index');
+Route::get('/tiket/create', 'TiketController@create');
+Route::get('/tiket/create/{id}', 'TiketController@created');
+Route::get('/tiket/create/{id}/{id2}', 'TiketController@add');
+Route::post('/tiket/create/{id}/{id2}', 'TiketController@store');
 
 });
 

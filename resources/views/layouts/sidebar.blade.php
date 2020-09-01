@@ -199,6 +199,14 @@
               <span class="menu-title">Transaksi Open Ticket</span>
             </a>
           </li>
+          
+          <!-- transaksi open ticket user -->  
+          <li class="nav-item {{ setActive(['transaksiot*']) }}">
+            <a class="nav-link" href="{{url('tiket')}}">
+              <i class="menu-icon fa fa-ticket"></i>
+              <span class="menu-title">Tiket</span>
+            </a>
+          </li>
 
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-laporan" aria-expanded="false" aria-controls="ui-laporan">

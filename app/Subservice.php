@@ -25,4 +25,9 @@ class Subservice extends Model
     {
     	return $this->hasMany(Transaksi::class);
     }
+    
+    public function service()
+    {
+        return $this->hasMany('App\Service','id','ServiceIDf');
+    }
 }

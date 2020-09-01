@@ -25,4 +25,9 @@ class Service extends Model
     {
     	return $this->hasMany(Transaksi::class);
     }
+    
+    public function layanan()
+    {
+        return $this->hasMany('App\Layanan','id','id_layanan');
+    }
 }
