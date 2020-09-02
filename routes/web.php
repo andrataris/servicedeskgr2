@@ -38,6 +38,11 @@ Route::resource('anggota', 'AnggotaController');
 /* nambah menu master service dan sub service */
 Route::resource('subservice', 'SubserviceController');
 Route::resource('service', 'ServiceController');
+Route::resource('layanan', 'LayananController');
+Route::resource('akseslayanan', 'AkseslayananController');
+
+
+
 Route::resource('apprrovebidang', 'ApprrovebidangController');
 Route::resource('appatasanit', 'AppatasanitController');
 Route::resource('apppetugasit', 'ApppetugasitController');

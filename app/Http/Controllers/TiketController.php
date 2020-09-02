@@ -66,6 +66,9 @@ class TiketController extends Controller
         return view('tiket.created', ['service'=>$service]);
     }
     
+
+
+    
     public function add($id,$id2)
     {
         if(Auth::user()->level == 'user') {

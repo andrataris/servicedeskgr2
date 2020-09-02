@@ -16,7 +16,7 @@
 
     <div class="form-group">
       <a href="{{ url('tiket') }}" class="btn btn-primary btn-rounded btn-fw"><i class="fa fa-book"></i> Lihat Data</a>
-      <a href="{{ url('tiket/create') }}" class="btn btn-primary btn-rounded btn-fw"><i class="fa fa-plus"></i> Tambah Data</a>
+      <a href="{{ url('tiket/create/1') }}" class="btn btn-primary btn-rounded btn-fw"><i class="fa fa-plus"></i> Tambah Data</a>
     </div>
 </div>
 <div class="row" style="margin-top: 20px;">

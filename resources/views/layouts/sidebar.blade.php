@@ -47,7 +47,11 @@
                  <li class="nav-item">
                   <a class="nav-link {{ setActive(['user*']) }}" href="{{route('user.index')}}">Data User</a>
                 </li>
-                
+
+
+                <li class="nav-item">
+                  <a class="nav-link {{ setActive(['layanan*']) }}" href="{{route('layanan.index')}}">Data Layanan</a>
+                </li>
 
                 </li>
                  <li class="nav-item">
@@ -56,6 +60,11 @@
                 </li>
                  <li class="nav-item">
                   <a class="nav-link {{ setActive(['subservice*']) }}" href="{{route('subservice.index')}}">Data Sub Service</a>
+                </li>
+
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link {{ setActive(['akseslayanan*']) }}" href="{{route('akseslayanan.index')}}">Akses Layanan</a>
                 </li>
 
               </ul>

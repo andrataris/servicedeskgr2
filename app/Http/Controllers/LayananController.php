@@ -5,6 +5,16 @@ namespace App\Http\Controllers;
 use App\Layanan;
 use Illuminate\Http\Request;
 
+use App\User;
+use App\Anggota;
+use App\Subservice;
+use Carbon\Carbon;
+use Session;
+use Illuminate\Support\Facades\Redirect;
+use Auth;
+use DB;
+use RealRashid\SweetAlert\Facades\Alert;
+
 class LayananController extends Controller
 {
     /**
@@ -14,7 +24,13 @@ class LayananController extends Controller
      */
     public function index()
     {
-        //
+        if(Auth::user()->level == 'user') {
+            Alert::info('Oopss..', 'Anda dilarang masuk ke area ini.');
+            return redirect()->to('/');
+        }
+
+        $datas = Layanan::get();
+        return view('layanan.index', compact('datas'));
     }
 
     /**
@@ -22,9 +38,22 @@ class LayananController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+
     public function create()
     {
-        //
+        if(Auth::user()->level == 'user') {
+            Alert::info('Oopss..', 'Anda dilarang masuk ke area ini.');
+            return redirect()->to('/');
+        }
+
+        $users = User::WhereNotExists(function($query) {
+                        $query->select(DB::raw(1))
+                        ->from('m_layanan');
+                        //->whereRaw('anggota.user_id = users.id');
+                     })->get();
+        return view('layanan.create', compact('users'));
     }
 
     /**
@@ -33,6 +62,8 @@ class LayananController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+
     public function store(Request $request)
     {
         //
